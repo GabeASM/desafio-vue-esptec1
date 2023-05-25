@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <H1>Bienvenido a la pagina de los pajaros</H1>
-    <p>Esta es la pagina de los pajaros</p>
+  <div class="container ">
+    <H1 class="text-center text-dark mt-5 ">Bienvenido a la pagina de los pajaros</H1>
+    <p class="text-center">Esta es la pagina de los pajaros</p>
     <PajarosList></PajarosList>
   </div>
 </template>
@@ -11,3 +11,9 @@ import PajarosList from '@/components/PajarosList.vue';
 
 
 </script>
+<style scoped>
+.color-oscuro{
+  background-color:#1B1F1E ;
+}
+
+</style>

@@ -1,22 +1,28 @@
 <template>
-    <div>
-        
-        <div v-for="(pajaro, index ) in pajaros " :key="index" class="card" style="width: 18rem;">
-            <img :src="pajaro.images.main" class="card-img-top" />
-            <div class="card-body">
-                <h5 class="card-title">{{ pajaro.name.spanish }}</h5>
-                <p class="card-text">Definitivamente un pajaro muy bonito</p>
-                <p>{{ pajaro.uid }}</p>
-                <router-link
-                class="btn btn-primary" :to="{
-                    name: 'detallePajaro',
-                    params:{
-                        id:pajaro.uid 
-                    }
-                }">About</router-link>
+    <body>
+        <div v-if="pajaros.length !== 0" class="container row justify-content-center">
+            <div v-for="(pajaro, index ) in pajaros " :key="index" class="card mx-5 my-5 " style="width: 18rem;">
+                <img :src="pajaro.images.main" />
+                <div class="card-body">
+                    <h4>Nombres</h4>
+                    <h5 class="card-title"> {{ pajaro.name.spanish }}</h5>
+                    <h5 class="cart-title">  {{ pajaro.name.english }}</h5>
+                    <router-link class="btn btn-primary mt-5" :to="{
+                        name: 'detallePajaro',
+                        params: {
+                            id: pajaro.uid
+                        }
+                    }">detalle</router-link>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="container row justify-content-center" v-else>
+            <div class="spinner-border" role="status">
+
+            </div>
+        </div>
+
+    </body>
 </template>
 <script setup>
 
@@ -31,9 +37,8 @@ onMounted(async () => {
 })
 
 
-// function detallePajaro() {
-//     console.log(pajaros.value)
-// }
-
-
 </script>
+
+<style scoped>
+
+</style>
