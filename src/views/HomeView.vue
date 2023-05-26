@@ -12,8 +12,6 @@ import PajarosList from '@/components/PajarosList.vue';
 
 </script>
 <style scoped>
-.color-oscuro{
-  background-color:#1B1F1E ;
-}
+
 
 </style>
